@@ -27,8 +27,9 @@ namespace :db do
   end
 end
 
+# we are accessing environment task inside db namespace
 desc 'drop into the Pry console'
-task console: :environment do
+task console: ['db:environment'] do
   Pry.start
 end
 
